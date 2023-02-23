@@ -11,19 +11,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.controller"/>
-
-    <mvc:annotation-driven enable-matrix-variables="true"/>
+    <context:component-scan base-package="com.keval.SpringCrudApp.controller"/>
+    
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    	<property name="prefix" value="/WEB-INF/pages/"/>
+    	<property name="prefix" value="/WEB-INF/views/"/>
     	<property name="suffix" value=".jsp"/>
     </bean>
-   
-    <bean class="com.service.EmployeeServiceImpl" name="employeeserviceimpl">
-    </bean>
-    <bean class="com.model.Employee" name="employee">
-    </bean>
-    <bean class="com.dao.EmployeeDaoImpl" name="employeeDaoImpl">
-    </bean>
-   
+    <bean class="com.keval.SpringCrudApp.service.EmployeeServiceImpl" name="employeeserviceimpl"/>
+    <bean class="com.keval.SpringCrudApp.dao.EmployeeDaoImpl" name="employeeDaoImpl"/>
 </beans>
